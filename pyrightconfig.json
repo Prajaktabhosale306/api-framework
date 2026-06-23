@@ -1,0 +1,7 @@
+{
+  "pythonVersion": "3.9",
+  "pythonPath": "/Users/prajaktabhosale/Documents/api-framework/venv/bin/python",
+  "venvPath": "/Users/prajaktabhosale/Documents/api-framework",
+  "include": ["api", "tests", "utils", "config"],
+  "typeCheckingMode": "basic"
+}

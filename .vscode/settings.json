@@ -1,0 +1,11 @@
+{
+  "python.defaultInterpreterPath": "/Users/prajaktabhosale/Documents/api-framework/venv/bin/python",
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": false,
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.extraPaths": ["/Users/prajaktabhosale/Documents/api-framework"],
+  "python.analysis.venvPath": "/Users/prajaktabhosale/Documents/api-framework",
+  "[python]": {
+    "editor.formatOnSave": true
+  }
+}

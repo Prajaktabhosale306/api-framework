@@ -1,0 +1,6 @@
+{
+    "baseUrl": "http://restful-booker.herokuapp.com",
+    "timeout": 5000,
+    "username": "admin",
+    "password": "password123"
+}
