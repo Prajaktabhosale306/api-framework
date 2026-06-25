@@ -52,7 +52,7 @@ import pytest
 
 @pytest.fixture(scope="session")
 def auth_api(config):
-    return AuthAPI(base_url=config()["baseUrl"])
+    return AuthAPI(config)
                                
 @pytest.fixture(scope="session")
 def auth_token(auth_api):
