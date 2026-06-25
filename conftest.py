@@ -6,6 +6,7 @@ from api.booking_api import BookingAPI
 from utils.helpers import get_booking_payload
 from dotenv import load_dotenv
 
+
 load_dotenv()
 def pytest_addoption(parser):
     parser.addoption("--env", action="store", default="qa", help="Environment to run tests against (qa, stage, prod)")
@@ -53,14 +54,6 @@ def create_booking(booking_api, auth_token):
         delete_response = booking_api.delete_booking(booking_id, auth_token)
         assert delete_response.status_code == 201  # Assuming 201 is the expected status code for successful deletion
         
-@pytest.fixture(scope="session")
-def config():
-    with open("config/config.json") as config_file:
-        config_data = json.load(config_file)
-    return config_data
-
-from api.auth_api import AuthAPI
-import pytest
 
 @pytest.fixture(scope="session")
 def auth_api(config):
