@@ -46,6 +46,13 @@ def config():
     with open("config/config.json") as config_file:
         config_data = json.load(config_file)
     return config_data
+
+from api.auth_api import AuthAPI
+import pytest
+
+@pytest.fixture(scope="session")
+def auth_api():
+    return AuthAPI(base_url=config()["baseUrl"])
                                
 @pytest.fixture(scope="session")
 def auth_token(auth_api):
