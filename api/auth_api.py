@@ -9,4 +9,6 @@ class AuthAPI(BaseClient):
             "password": os.getenv("API_PASSWORD")
         }
         response = self.post(endpoint, json_data=data)
+        if response.status_code != 200:
+            raise Exception("Failed to create token: {response.status_code} - {response.text}")
         return response

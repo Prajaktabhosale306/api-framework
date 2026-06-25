@@ -27,6 +27,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run tests
+        env:
+          USERNAME: ${{ secrets.API_USERNAME }}
+          PASSWORD: ${{ secrets.API_PASSWORD }}
         run: |
           pytest --alluredir=reports/allure-results -v
 
