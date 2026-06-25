@@ -1,6 +1,7 @@
 name: API Tests
 
-on Push:
+on:
+ Push:
   branches:
     - main
   paths:
