@@ -1,3 +1,0 @@
-INFO     api.base_client:base_client.py:14 GET Request URL: http://restful-booker.herokuapp.com/booking/3095, Params: None, Headers: None
-INFO     api.base_client:base_client.py:55 Response Status Code: 200
-INFO     api.base_client:base_client.py:56 Response Body: {"firstname":"John","lastname":"Doe","totalprice":150,"depositpaid":true,"bookingdates":{"checkin":"2024-01-01","checkout":"2024-01-10"},"additionalneeds":"Breakfast"}

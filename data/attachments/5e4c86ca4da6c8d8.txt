@@ -1,6 +1,0 @@
-INFO     api.base_client:base_client.py:24 POST Request URL: http://restful-booker.herokuapp.com/booking, Data: None, JSON Data: {'firstname': 'Test', 'lastname': 'Bhosale', 'totalprice': 100, 'depositpaid': True, 'bookingdates': {'checkin': '2023-01-01', 'checkout': '2023-01-02'}, 'additionalneeds': None}, Headers: None
-INFO     api.base_client:base_client.py:55 Response Status Code: 200
-INFO     api.base_client:base_client.py:56 Response Body: {"bookingid":3093,"booking":{"firstname":"Test","lastname":"Bhosale","totalprice":100,"depositpaid":true,"bookingdates":{"checkin":"2023-01-01","checkout":"2023-01-02"},"additionalneeds":null}}
-INFO     api.base_client:base_client.py:46 DELETE Request URL: http://restful-booker.herokuapp.com/booking/3093, Headers: {'Cookie': 'token=dbcf12821a0395c'}
-INFO     api.base_client:base_client.py:55 Response Status Code: 201
-INFO     api.base_client:base_client.py:56 Response Body: Created
