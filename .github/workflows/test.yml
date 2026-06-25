@@ -1,12 +1,12 @@
 name: API Tests
 
 on:
- Push:
-  branches:
-    - main
-  paths:
-    - 'tests/**'
-    - 'pytest.ini'
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   run-tests:
