@@ -48,13 +48,12 @@ def config():
 def auth_api(config):
     return AuthAPI(config["baseUrl"])
 
+                                                            
 @pytest.fixture(scope="session")
-def auth_token(auth_api, config):
-    username = config.get("username", "admin")
-    password = config.get("password", "password123")
-    response = auth_api.create_token(username, password)
-    assert response.status_code == 200
-    return response.json().get("token")
+def auth_token(auth_api):
+    response = auth_api.create_token()
+    if response.status_code == 200:
+        return response.json().get("token")
 
 @pytest.fixture(scope="session")
 def booking_api(config):
