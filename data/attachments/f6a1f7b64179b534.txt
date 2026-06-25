@@ -1,0 +1,3 @@
+2026-06-25 10:56:27 - api.base_client - INFO - GET Request URL: http://restful-booker.herokuapp.com/booking/3095, Params: None, Headers: None
+2026-06-25 10:56:27 - api.base_client - INFO - Response Status Code: 200
+2026-06-25 10:56:27 - api.base_client - INFO - Response Body: {"firstname":"John","lastname":"Doe","totalprice":150,"depositpaid":true,"bookingdates":{"checkin":"2024-01-01","checkout":"2024-01-10"},"additionalneeds":"Breakfast"}
