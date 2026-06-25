@@ -1,13 +1,16 @@
+from time import time
 import requests
 import json
 from utils.logger import get_logger
 from utils.allure_helper import attach_request, attach_response
 logger = get_logger(__name__)
 class BaseClient:
-    def __init__(self, base_url, timeout=10):
+    def __init__(self, base_url, timeout=10, retries=3, delay=2):
         self.base_url = base_url
         self.timeout = timeout
         self.session = requests.Session()
+        self._retry_count = retries
+        self.delay = delay
 
     def get(self, endpoint, params=None, headers=None):
         url = f"{self.base_url}{endpoint}"
@@ -54,3 +57,13 @@ class BaseClient:
     def _log_response(self, response):
         logger.info(f"Response Status Code: {response.status_code}")
         logger.info(f"Response Body: {response.text}")
+
+    def _request(self, method, endpoint, payload=None, headers=None):
+        url = f"{self.base_url}{endpoint}"
+        for attempt in range(1, self._retry_count + 1):
+            response = self.session.request(method, url, json=payload, headers=headers)
+            if response.status_code < 500:
+                break
+            logger.warning(f"Attempt {attempt} failed with status code {response.status_code}. Retrying in {self.delay} seconds...")
+            time.sleep(self.delay)
+        return response

@@ -31,8 +31,7 @@ jobs:
           USERNAME: ${{ secrets.API_USERNAME }}
           PASSWORD: ${{ secrets.API_PASSWORD }}
         run: |
-          pytest --alluredir=reports/allure-results -v
-
+          pytest --env=qa --alluredir=reports/allure-results
       - name: Install Allure Commandline
         run: |
           npm install -g allure-commandline

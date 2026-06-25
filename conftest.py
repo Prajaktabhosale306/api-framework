@@ -1,12 +1,24 @@
 import pytest
 import json
+import os
 from api.auth_api import AuthAPI
 from api.booking_api import BookingAPI
 from utils.helpers import get_booking_payload
 from dotenv import load_dotenv
 
 load_dotenv()
+def pytest_addoption(parser):
+    parser.addoption("--env", action="store", default="qa", help="Environment to run tests against (qa, stage, prod)")
 
+@pytest.fixture(scope="session")
+def config(request):
+    env = request.config.getoption("--env")
+    config_file = f"config/{env}.json"
+    if not os.path.exists(config_file):
+        raise FileNotFoundError(f"Configuration file '{config_file}' not found.")
+    with open(config_file) as f:
+        return json.load(f)
+    
 @pytest.fixture
 def create_and_delete_booking(booking_api, auth_token):
      #Create a booking
