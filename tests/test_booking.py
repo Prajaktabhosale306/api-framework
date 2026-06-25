@@ -1,6 +1,5 @@
 import pytest
 import allure
-
 @allure.epic("Booking API Tests")
 @allure.feature("Booking Management")
 class TestBooking:
