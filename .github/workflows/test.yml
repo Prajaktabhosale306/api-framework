@@ -40,7 +40,7 @@ jobs:
       - name: Generate Allure Report
         if: always()
         run: |
-          allure generate reports/allure-results -o reports/allure-report --clean
+          npx allure-commandline generate reports/allure-results -o reports/allure-report --clean
 
       - name: Deploy report to GitHub Pages
         if: always()

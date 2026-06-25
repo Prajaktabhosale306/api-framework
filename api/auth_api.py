@@ -2,15 +2,18 @@ import os
 from .base_client import BaseClient
 
 class AuthAPI(BaseClient):
+
+    def __init__(self, base_url, username, password):
+        super().__init__(base_url)
+        self.username = username
+        self.password = password
+
     def create_token(self):
         endpoint = "/auth"
+
         data = {
-            "username": os.getenv("API_USERNAME"),
-            "password": os.getenv("API_PASSWORD")
+            "username": self.username,
+            "password": self.password
         }
-        print("API_USERNAME:", os.getenv("API_USERNAME"))
-        print("API_PASSWORD:", os.getenv("API_PASSWORD"))
-        response = self.post(endpoint, json_data=data)
-        if response.status_code != 200:
-            raise Exception(f"Failed to create token: {response.status_code} - {response.text}")
-        return response
+
+        return self.post(endpoint, json_data=data)
