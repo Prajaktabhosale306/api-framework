@@ -1,0 +1,36 @@
+2026-06-25 09:53:20 - api.base_client - INFO - POST Request URL: http://restful-booker.herokuapp.com/booking, Data: None, JSON Data: {'firstname': 'John', 'lastname': 'Doe', 'totalprice': 150, 'depositpaid': False, 'bookingdates': {'checkin': '2024-01-01', 'checkout': '2024-01-10'}, 'additionalneeds': 'Breakfast'}, Headers: None
+2026-06-25 09:53:21 - api.base_client - INFO - Response Status Code: 200
+2026-06-25 09:53:21 - api.base_client - INFO - Response Body: {"bookingid":1546,"booking":{"firstname":"John","lastname":"Doe","totalprice":150,"depositpaid":false,"bookingdates":{"checkin":"2024-01-01","checkout":"2024-01-10"},"additionalneeds":"Breakfast"}}
+2026-06-25 09:53:21 - api.base_client - INFO - POST Request URL: http://restful-booker.herokuapp.com/booking, Data: None, JSON Data: {'firstname': 'John', 'lastname': 'Doe', 'totalprice': 150, 'depositpaid': True, 'bookingdates': {'checkin': '2024-01-01', 'checkout': '2024-01-10'}, 'additionalneeds': 'Breakfast'}, Headers: None
+2026-06-25 09:53:22 - api.base_client - INFO - Response Status Code: 200
+2026-06-25 09:53:22 - api.base_client - INFO - Response Body: {"bookingid":1549,"booking":{"firstname":"John","lastname":"Doe","totalprice":150,"depositpaid":true,"bookingdates":{"checkin":"2024-01-01","checkout":"2024-01-10"},"additionalneeds":"Breakfast"}}
+2026-06-25 09:53:22 - api.base_client - INFO - POST Request URL: http://restful-booker.herokuapp.com/auth, Data: None, JSON Data: {'username': 'admin', 'password': 'password123'}, Headers: None
+2026-06-25 09:53:22 - api.base_client - INFO - Response Status Code: 200
+2026-06-25 09:53:22 - api.base_client - INFO - Response Body: {"token":"53f6cfb246cd0dd"}
+2026-06-25 09:53:22 - api.base_client - INFO - POST Request URL: http://restful-booker.herokuapp.com/booking, Data: None, JSON Data: {'firstname': 'Prajakta', 'lastname': 'Bhosale', 'totalprice': 100, 'depositpaid': True, 'bookingdates': {'checkin': '2023-01-01', 'checkout': '2023-01-02'}, 'additionalneeds': None}, Headers: None
+2026-06-25 09:53:23 - api.base_client - INFO - Response Status Code: 200
+2026-06-25 09:53:23 - api.base_client - INFO - Response Body: {"bookingid":1557,"booking":{"firstname":"Prajakta","lastname":"Bhosale","totalprice":100,"depositpaid":true,"bookingdates":{"checkin":"2023-01-01","checkout":"2023-01-02"},"additionalneeds":null}}
+2026-06-25 09:53:23 - api.base_client - INFO - POST Request URL: http://restful-booker.herokuapp.com/booking, Data: None, JSON Data: {'firstname': 'Prajakta', 'lastname': 'Bhosale', 'totalprice': 0, 'depositpaid': True, 'bookingdates': {'checkin': '2023-01-01', 'checkout': '2023-01-02'}, 'additionalneeds': None}, Headers: None
+2026-06-25 09:53:23 - api.base_client - INFO - Response Status Code: 200
+2026-06-25 09:53:23 - api.base_client - INFO - Response Body: {"bookingid":1559,"booking":{"firstname":"Prajakta","lastname":"Bhosale","totalprice":0,"depositpaid":true,"bookingdates":{"checkin":"2023-01-01","checkout":"2023-01-02"},"additionalneeds":null}}
+2026-06-25 09:53:23 - api.base_client - INFO - POST Request URL: http://restful-booker.herokuapp.com/booking, Data: None, JSON Data: {'firstname': '!@#$%^&*()', 'lastname': 'Bhosale', 'totalprice': 100, 'depositpaid': True, 'bookingdates': {'checkin': '2023-01-01', 'checkout': '2023-01-02'}, 'additionalneeds': None}, Headers: None
+2026-06-25 09:53:23 - api.base_client - INFO - Response Status Code: 200
+2026-06-25 09:53:23 - api.base_client - INFO - Response Body: {"bookingid":1564,"booking":{"firstname":"!@#$%^&*()","lastname":"Bhosale","totalprice":100,"depositpaid":true,"bookingdates":{"checkin":"2023-01-01","checkout":"2023-01-02"},"additionalneeds":null}}
+2026-06-25 09:53:23 - api.base_client - INFO - POST Request URL: http://restful-booker.herokuapp.com/booking, Data: None, JSON Data: {'firstname': '', 'lastname': '', 'totalprice': 100, 'depositpaid': True, 'bookingdates': {'checkin': '2023-01-01', 'checkout': '2023-01-02'}, 'additionalneeds': None}, Headers: None
+2026-06-25 09:53:23 - api.base_client - INFO - Response Status Code: 200
+2026-06-25 09:53:23 - api.base_client - INFO - Response Body: {"bookingid":1568,"booking":{"firstname":"","lastname":"","totalprice":100,"depositpaid":true,"bookingdates":{"checkin":"2023-01-01","checkout":"2023-01-02"},"additionalneeds":null}}
+2026-06-25 09:53:23 - api.base_client - INFO - POST Request URL: http://restful-booker.herokuapp.com/booking, Data: None, JSON Data: {'firstname': 'Test', 'lastname': 'Bhosale', 'totalprice': 100, 'depositpaid': True, 'bookingdates': {'checkin': '2023-01-01', 'checkout': '2023-01-02'}, 'additionalneeds': None}, Headers: None
+2026-06-25 09:53:24 - api.base_client - INFO - Response Status Code: 200
+2026-06-25 09:53:24 - api.base_client - INFO - Response Body: {"bookingid":1573,"booking":{"firstname":"Test","lastname":"Bhosale","totalprice":100,"depositpaid":true,"bookingdates":{"checkin":"2023-01-01","checkout":"2023-01-02"},"additionalneeds":null}}
+2026-06-25 09:53:24 - api.base_client - INFO - DELETE Request URL: http://restful-booker.herokuapp.com/booking/1573, Headers: {'Cookie': 'token=53f6cfb246cd0dd'}
+2026-06-25 09:53:24 - api.base_client - INFO - Response Status Code: 201
+2026-06-25 09:53:24 - api.base_client - INFO - Response Body: Created
+2026-06-25 09:53:24 - api.base_client - INFO - POST Request URL: http://restful-booker.herokuapp.com/booking, Data: None, JSON Data: {'firstname': 'John', 'lastname': 'Doe', 'totalprice': 150, 'depositpaid': True, 'bookingdates': {'checkin': '2024-01-01', 'checkout': '2024-01-10'}, 'additionalneeds': 'Breakfast'}, Headers: None
+2026-06-25 09:53:24 - api.base_client - INFO - Response Status Code: 200
+2026-06-25 09:53:24 - api.base_client - INFO - Response Body: {"bookingid":1580,"booking":{"firstname":"John","lastname":"Doe","totalprice":150,"depositpaid":true,"bookingdates":{"checkin":"2024-01-01","checkout":"2024-01-10"},"additionalneeds":"Breakfast"}}
+2026-06-25 09:53:24 - api.base_client - INFO - GET Request URL: http://restful-booker.herokuapp.com/booking/1580, Params: None, Headers: None
+2026-06-25 09:53:25 - api.base_client - INFO - Response Status Code: 200
+2026-06-25 09:53:25 - api.base_client - INFO - Response Body: {"firstname":"John","lastname":"Doe","totalprice":150,"depositpaid":true,"bookingdates":{"checkin":"2024-01-01","checkout":"2024-01-10"},"additionalneeds":"Breakfast"}
+2026-06-25 09:53:25 - api.base_client - INFO - DELETE Request URL: http://restful-booker.herokuapp.com/booking/1580, Headers: {'Cookie': 'token=53f6cfb246cd0dd'}
+2026-06-25 09:53:25 - api.base_client - INFO - Response Status Code: 201
+2026-06-25 09:53:25 - api.base_client - INFO - Response Body: Created

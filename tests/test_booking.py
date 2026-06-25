@@ -1,8 +1,13 @@
 import pytest
+import allure
+
+@allure.epic("Booking API Tests")
+@allure.feature("Booking Management")
 class TestBooking:
     booking_id = None  # Class variable to store the booking ID across tests
 
-    @pytest.mark.order(1)
+    @allure.story("Create Booking")
+    @allure.severity(allure.severity_level.CRITICAL)
     def test_create_booking(self, booking_api):
         # Example test case for creating a booking
         booking_data = {
@@ -22,14 +27,17 @@ class TestBooking:
         assert response.json()["bookingid"] is not None
         TestBooking.booking_id = response.json()["bookingid"]
 
-    @pytest.mark.order(2)
+    @allure.story("Get Booking")
+    @allure.severity(allure.severity_level.NORMAL)
     def test_get_booking(self, booking_api):
         # Example test case for retrieving a booking
         response = booking_api.get_booking(TestBooking.booking_id)
         assert response.status_code == 200
         assert response.json()["firstname"] == "John"
 
-    @pytest.mark.order(3)
+
+    @allure.story("Delete Booking")
+    @allure.severity(allure.severity_level.NORMAL)
     def test_delete_booking(self, booking_api, auth_token):
         # Example test case for deleting a booking
         
