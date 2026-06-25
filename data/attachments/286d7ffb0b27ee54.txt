@@ -1,6 +1,0 @@
-[32mINFO    [0m api.base_client:base_client.py:24 POST Request URL: http://restful-booker.herokuapp.com/auth, Data: None, JSON Data: {'username': 'admin', 'password': 'password123'}, Headers: None
-[32mINFO    [0m api.base_client:base_client.py:55 Response Status Code: 200
-[32mINFO    [0m api.base_client:base_client.py:56 Response Body: {"token":"53f6cfb246cd0dd"}
-[32mINFO    [0m api.base_client:base_client.py:24 POST Request URL: http://restful-booker.herokuapp.com/booking, Data: None, JSON Data: {'firstname': 'Prajakta', 'lastname': 'Bhosale', 'totalprice': 100, 'depositpaid': True, 'bookingdates': {'checkin': '2023-01-01', 'checkout': '2023-01-02'}, 'additionalneeds': None}, Headers: None
-[32mINFO    [0m api.base_client:base_client.py:55 Response Status Code: 200
-[32mINFO    [0m api.base_client:base_client.py:56 Response Body: {"bookingid":1557,"booking":{"firstname":"Prajakta","lastname":"Bhosale","totalprice":100,"depositpaid":true,"bookingdates":{"checkin":"2023-01-01","checkout":"2023-01-02"},"additionalneeds":null}}
