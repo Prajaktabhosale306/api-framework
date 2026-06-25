@@ -3,6 +3,9 @@ import json
 from api.auth_api import AuthAPI
 from api.booking_api import BookingAPI
 from utils.helpers import get_booking_payload
+from dotenv import load_dotenv
+
+load_dotenv()
 
 @pytest.fixture
 def create_and_delete_booking(booking_api, auth_token):
@@ -43,12 +46,7 @@ def config():
     with open("config/config.json") as config_file:
         config_data = json.load(config_file)
     return config_data
-
-@pytest.fixture(scope="session")
-def auth_api(config):
-    return AuthAPI(config["baseUrl"])
-
-                                                            
+                               
 @pytest.fixture(scope="session")
 def auth_token(auth_api):
     response = auth_api.create_token()
