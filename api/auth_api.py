@@ -16,7 +16,7 @@ class AuthAPI(BaseClient):
         response = self.post(endpoint, json_data=data)
         if response.status_code != 200:
             raise Exception(f"Failed to create token: {response.status_code} - {response.text}")    
-        return response
+        return response.json()["token"]
 
         
     

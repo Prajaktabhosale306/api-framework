@@ -58,14 +58,7 @@ def create_booking(booking_api, auth_token):
 @pytest.fixture(scope="session")
 def auth_token(config):
     auth_api = AuthAPI(config["baseUrl"])
-    response = auth_api.create_token()
-
-    print("Auth Status:", response.status_code)
-    print("Auth Body:", response.text)
-
-    assert response.status_code == 200
-
-    return response.json()["token"]
+    return auth_api.create_token()
 
 @pytest.fixture(scope="session")
 def booking_api(config):
