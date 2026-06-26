@@ -65,11 +65,7 @@ def auth_token(config):
 
     assert response.status_code == 200
 
-    token = response.json()["token"]
-
-    print("Token:", token)
-
-    return token
+    return response
 
 @pytest.fixture(scope="session")
 def booking_api(config):

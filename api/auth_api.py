@@ -5,6 +5,8 @@ class AuthAPI(BaseClient):
 
     def create_token(self):
         endpoint = "/auth"
+        print("username:", "", os.getenv("API_USERNAME"))
+        print("password:", "", os.getenv("API_PASSWORD"))
 
         data = {
             "username": os.getenv("API_USERNAME"),
