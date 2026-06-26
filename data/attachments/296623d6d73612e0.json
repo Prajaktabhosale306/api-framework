@@ -1,6 +1,6 @@
 {
     "method": "GET",
-    "url": "http://restful-booker.herokuapp.com/booking/4787",
+    "url": "http://restful-booker.herokuapp.com/booking/422",
     "headers": null,
     "payload": null
 }

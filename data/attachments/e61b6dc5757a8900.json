@@ -1,0 +1,9 @@
+{
+    "method": "POST",
+    "url": "http://restful-booker.herokuapp.com/auth",
+    "headers": null,
+    "payload": {
+        "username": null,
+        "password": null
+    }
+}
