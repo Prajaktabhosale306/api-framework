@@ -1,0 +1,4 @@
+username:  None
+password:  None
+Auth Status: 200
+Auth Body: {"reason":"Bad credentials"}

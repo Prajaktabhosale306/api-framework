@@ -1,0 +1,3 @@
+INFO     api.base_client:base_client.py:49 DELETE Request URL: http://restful-booker.herokuapp.com/booking/3406, Headers: {'Cookie': 'token=<Response [200]>'}
+INFO     api.base_client:base_client.py:58 Response Status Code: 403
+INFO     api.base_client:base_client.py:59 Response Body: Forbidden
