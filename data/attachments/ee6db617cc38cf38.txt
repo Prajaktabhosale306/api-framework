@@ -1,0 +1,3 @@
+INFO     api.base_client:base_client.py:27 POST Request URL: http://restful-booker.herokuapp.com/auth, Data: None, JSON Data: {'username': None, 'password': None}, Headers: None
+INFO     api.base_client:base_client.py:58 Response Status Code: 200
+INFO     api.base_client:base_client.py:59 Response Body: {"reason":"Bad credentials"}
