@@ -84,4 +84,4 @@ def booking_api(config):
 
 @pytest.fixture
 def booking_payload():
-    return get_booking_payload()  # Assuming get_booking_payload is imported from utils/helpers.py
+    return get_booking_payload()  # Assuming get_booking_payload is imported from utils/helpers.py 
