@@ -54,14 +54,6 @@ def create_booking(booking_api, auth_token):
         delete_response = booking_api.delete_booking(booking_id, auth_token)
         assert delete_response.status_code == 201  # Assuming 201 is the expected status code for successful deletion
         
-
-@pytest.fixture(scope="session")
-def auth_api(config):
-    return AuthAPI(
-        config["baseUrl"],
-        config["username"],
-        config["password"]
-    )
                                
 @pytest.fixture(scope="session")
 def auth_token(auth_api):
