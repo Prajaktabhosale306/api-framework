@@ -16,7 +16,7 @@ class TestAIFeatures:
         result = analyse_failure(
             test_name="test_update_booking",
             request_data={"method": "PUT", "url": "/booking/5", "headers": {"Cookie":"token=expired"}},
-            response_data={"status_code": 403,"body": forbidden},
+            response_data={"status_code": 403,"body": "forbidden"},
             error_message="assert 403==200"
         )
         assert result is not None
