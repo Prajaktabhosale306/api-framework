@@ -13,7 +13,7 @@ class AIClient:
         self.provider = self.load_provider(provider_name)
         logger.info(f"AI_Provider:{provider_name}")
 
-    def _load_provider(self, name):
+    def load_provider(self, name):
         if name == "ollama":
             from ai.providers.ollama_provider import ollamaProvider
             return ollamaProvider(model=os.getenv("AI_Model", "llama3"))
