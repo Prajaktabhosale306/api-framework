@@ -1,2 +1,0 @@
-2026-06-27 15:44:06 - api.base_client - INFO - DELETE Request URL: http://restful-booker.herokuapp.com/booking/1962, Headers: {'Cookie': 'token=f5a283ce6e61103'}
-2026-06-27 15:44:06 - api.base_client - INFO - Response Status Code: 201
