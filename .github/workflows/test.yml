@@ -34,14 +34,14 @@ jobs:
         run:   |
           ollama serve &
           sleep 5
-          ollama pull llama3.2.1b
+          ollama pull llama3.2:1b
 
       - name: Run tests
         env: #sets environment variables for the test run, these are read in auth_api.py
           API_USERNAME: ${{ secrets.API_USERNAME }}
           API_PASSWORD: ${{ secrets.API_PASSWORD }}
           AI_PROVIDER: ollama
-          AI_MODEL: llama3.2.1b
+          AI_MODEL: llama3.2:1b
         run: |
           pytest --env=qa --alluredir=reports/allure-results
       - name: Install Allure Commandline #Install allure on command
