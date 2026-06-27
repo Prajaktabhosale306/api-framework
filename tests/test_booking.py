@@ -43,3 +43,5 @@ class TestBooking:
         
         response = booking_api.delete_booking(TestBooking.booking_id, auth_token)
         assert response.status_code == 201  # Assuming 201 is the expected status code for successful deletion
+
+        

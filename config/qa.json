@@ -1,4 +1,4 @@
 {
-    "baseUrl": "http://restful-booker.herokuapp.com",
+    "baseUrl": "http://restful-booker.herokuapp.com", 
     "timeout": 10
 }

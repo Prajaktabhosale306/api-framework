@@ -2,11 +2,11 @@ import pytest
 import json
 
 def load_test_data():
-    with open("testdata/bookings.json") as file:
+    with open("testdata/bookings.json") as file: #Load test data from external file
         return json.load(file)
     
 class TestDataDriven:
-    @pytest.mark.parametrize("data", load_test_data())
+    @pytest.mark.parametrize("data", load_test_data()) #Run this test once per items in list, "data" parameter name matches fun
     def test_create_booking(self, booking_api, data):
         response = booking_api.create_booking(data)
         assert response.status_code == 200

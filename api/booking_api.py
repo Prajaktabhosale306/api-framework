@@ -1,5 +1,5 @@
 from api.base_client import BaseClient
-
+#purpose: All Booking CRUD operations, test calls these methods, never a raw HTTP
 class BookingAPI(BaseClient):
     def create_booking(self, booking_data):
         endpoint = "/booking"
