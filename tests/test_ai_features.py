@@ -58,7 +58,7 @@ class TestAIFeatures:
         assert result is not None
         assert result["valid"] == False
         assert len(result["issues"])>0
-        print(f"\nMismatch detected":{result['issues']})
+        print(f"\nMismatch detected:{result['issues']}")
 
 
     def test_ai_generated_cases_execution(self, booking_api, booking_schema):
