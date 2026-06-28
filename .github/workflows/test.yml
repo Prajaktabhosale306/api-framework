@@ -26,22 +26,22 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt  
 
-      - name: Install Ollama
-        run: |
-          curl -fsSL https://ollama.ai/install.sh | sh
+     # - name: Install Ollama
+    #    run: |
+     #     curl -fsSL https://ollama.ai/install.sh | sh
 
-      - name: Start Ollama and pull model
-        run:   |
-          ollama serve &
-          sleep 5
-          ollama pull gemma3:4b
+     # - name: Start Ollama and pull model
+      #  run:   |
+     #     ollama serve &
+       #   sleep 5
+        #  ollama pull gemma3:4b
 
       - name: Run tests
         env: #sets environment variables for the test run, these are read in auth_api.py
           API_USERNAME: ${{ secrets.API_USERNAME }}
           API_PASSWORD: ${{ secrets.API_PASSWORD }}
-          AI_PROVIDER: ollama
-          AI_MODEL: gemma3:4b    s
+          AI_PROVIDER: gemini
+          AI_MODEL: gemini-2.5-flash
         run: |
           pytest --env=qa --alluredir=reports/allure-results
       - name: Install Allure Commandline #Install allure on command
