@@ -1,8 +1,0 @@
-{
-    "method": "DELETE",
-    "url": "http://restful-booker.herokuapp.com/booking/54",
-    "headers": {
-        "Cookie": "token=e54364e13c0af85"
-    },
-    "payload": null
-}

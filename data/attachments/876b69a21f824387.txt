@@ -1,0 +1,8 @@
+INFO     ai.providers.ai_provider_manager:ai_provider_manager.py:31 AI Request: You are an API Testing expert. A test just failed. Analyse it.
+    Test Name : test_update_booking
+R...
+DEBUG    ai.providers.ai_provider_manager:ai_provider_manager.py:34 AI Response:Here's the analysis:
+
+**ROOT CAUSE:** The test failed because the API is not allowing PUT requests with an expired "token" in the Cookie header, which is causing a 403 Forbidden response.
+
+**CATEGORY:...

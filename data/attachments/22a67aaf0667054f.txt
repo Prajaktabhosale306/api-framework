@@ -1,0 +1,15 @@
+INFO     ai.providers.ai_provider_manager:ai_provider_manager.py:31 AI Request: Generate 5 edge case test payloads for:
+    Endpoint: POST /booking
+    Schema: {
+  "type": "object"...
+DEBUG    ai.providers.ai_provider_manager:ai_provider_manager.py:34 AI Response:Here are five edge case test payloads for the given endpoint:
+
+**Edge Case 1: Missing required field 'booking_id'**
+
+```json
+{
+  "booking": {
+    "firstname": "",
+    "lastname": "",
+    "totalprice":...
+ERROR    ai.providers.ai_provider_manager:ai_provider_manager.py:47 AI response is not valid JSON

@@ -1,9 +1,0 @@
-INFO     api.base_client:base_client.py:29 POST Request URL: http://restful-booker.herokuapp.com/booking, Data: None, JSON Data: {'firstname': 'Prajakta', 'lastname': 'Bhosale', 'totalprice': 100, 'depositpaid': True, 'bookingdates': {'checkin': '2023-01-01', 'checkout': '2023-01-02'}, 'additionalneeds': None}, Headers: None
-INFO     api.base_client:base_client.py:61 Response Status Code: 200
-DEBUG    api.base_client:base_client.py:62 Response Body: {"bookingid":138,"booking":{"firstname":"Prajakta","lastname":"Bhosale","totalprice":100,"depositpaid":true,"bookingdates":{"checkin":"2023-01-01","checkout":"2023-01-02"},"additionalneeds":null}}
-INFO     ai.providers.ai_provider_manager:ai_provider_manager.py:31 AI Request: Check if this API Response is logically correct:
-    Request Sent: {"firstname": "Prajakta", "lastna...
-DEBUG    ai.providers.ai_provider_manager:ai_provider_manager.py:34 AI Response:The provided API responses are logically correct in terms of the structure and data sent vs received.
-
-1. **Data Matching**: The request and response have identical keys for all properties, which is a...
-ERROR    ai.providers.ai_provider_manager:ai_provider_manager.py:47 AI response is not valid JSON
