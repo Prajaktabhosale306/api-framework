@@ -40,6 +40,7 @@ jobs:
         env: #sets environment variables for the test run, these are read in auth_api.py
           API_USERNAME: ${{ secrets.API_USERNAME }}
           API_PASSWORD: ${{ secrets.API_PASSWORD }}
+          GEMINI_API_KEY: ${{secrets.GEMINI_API_KEY}}
           AI_PROVIDER: gemini
           AI_MODEL: gemini-2.5-flash
         run: |
