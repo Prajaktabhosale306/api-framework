@@ -4,7 +4,7 @@ from ai.providers.ai_provider_manager import AIClient
 ai=AIClient()
 
 def generate_test_cases(endpoint, method, schema):
-    """AI generated edge cases test payloads"""
+    """AI generated edge cases test payloads.."""
 
     prompt = f"""Generate 5 edge case test payloads for:
     Endpoint: {method} {endpoint}
