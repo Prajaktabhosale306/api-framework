@@ -1,0 +1,8 @@
+INFO     ai.providers.ai_provider_manager:ai_provider_manager.py:34 AI Request: Check if this API Response is logically correct:
+    Request Sent: {"firstname": "Prajakta", "lastna...
+DEBUG    ai.providers.ai_provider_manager:ai_provider_manager.py:37 AI Response:```json
+{
+  "valid": false,
+  "issues": [
+    "The 'firstname' in the response ('WRONG_NAME') does not match the 'firstname' sent in the request ('Prajakta').",
+    "The 'lastname' in the response ('W...

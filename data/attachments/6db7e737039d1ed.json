@@ -1,0 +1,19 @@
+{
+    "method": "POST",
+    "url": "http://restful-booker.herokuapp.com/booking",
+    "headers": null,
+    "payload": {
+        "booking_id": 4,
+        "booking": {
+            "firstname": "Robert'; DROP TABLE users;--",
+            "lastname": "Green",
+            "totalprice": 300,
+            "depositpaid": false,
+            "bookingdates": {
+                "checkin": "2023-09-01",
+                "checkout": "2023-09-05"
+            },
+            "additionalneeds": "Parking"
+        }
+    }
+}

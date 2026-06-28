@@ -1,0 +1,10 @@
+
+ Missing required top-level field 'booking_id'. The schema marks 'booking_id' as required in the root object.: got 500
+
+ Wrong type for 'totalprice'. Expected an integer but received a string value.: got 500
+
+ Invalid date format for 'checkin'. Expected 'YYYY-MM-DD' (date format) but received 'DD/MM/YYYY'.: got 500
+
+ Boundary value error: 'checkout' date is before 'checkin' date. This violates logical date sequence for a booking.: got 500
+
+ Special characters and potential injection attempt in 'firstname'. Input validation should ideally reject or sanitize such values.: got 500
