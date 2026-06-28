@@ -37,12 +37,17 @@ class AIClient:
         return response
     
     def ask_json(self, prompt, max_tokens=1024):
-        """Ask AI and parse response as json"""
         response = self.ask(prompt, max_tokens)
         if response is None:
-            return None
+            return None 
+        response = response.strip()
+        response = response.replace("```json", "")
+        response = response.replace("```", "")
+        response = response.strip()
+
         try:
             return json.loads(response)
-        except json.JSONDecodeError:
-            logger.error("AI response is not valid JSON")
+        except json.JSONDecodeError as e:
+            logger.error(f"AI response is not valid JSON: {e}")
+            logger.debug(f"Raw AI Response:\n{response}")
             return None
