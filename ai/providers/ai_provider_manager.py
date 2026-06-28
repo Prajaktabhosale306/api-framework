@@ -31,7 +31,7 @@ class AIClient:
         logger.info(f"AI Request: {prompt[:100]}...")
         response =self.provider.ask(prompt, max_tokens)
         if response:
-            logger.debug(f"AI Response:{response:[200]}...")
+            logger.debug(f"AI Response:{response[:200]}...")
         else:
             logger.error("AI Returned no response")
         return response

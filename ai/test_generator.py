@@ -6,7 +6,7 @@ ai=AIClient()
 def generate_test_cases(endpoint, method, schema):
     """AI generated edge cases test payloads"""
 
-    prompt = """Generate 5 edge case test payloads for:
+    prompt = f"""Generate 5 edge case test payloads for:
     Endpoint: {method} {endpoint}
     Schema: {json.dumps(schema, intent=2)}
     
