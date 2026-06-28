@@ -1,2 +1,0 @@
-2026-06-28 07:00:34 - api.base_client - INFO - GET Request URL: http://restful-booker.herokuapp.com/booking/5484, Params: None, Headers: None
-2026-06-28 07:00:34 - api.base_client - INFO - Response Status Code: 200

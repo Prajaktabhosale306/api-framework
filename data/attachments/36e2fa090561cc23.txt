@@ -1,2 +1,0 @@
-
-AI Validation:{'valid': True, 'issues': []}

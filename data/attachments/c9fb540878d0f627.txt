@@ -1,5 +1,0 @@
-2026-06-28 06:57:24 - ai.providers.ai_provider_manager - INFO - AI Request: Generate 5 edge case test payloads for:
-    Endpoint: POST /booking
-    Schema: {
-  "type": "object"...
-2026-06-28 07:00:34 - ai.providers.ai_provider_manager - ERROR - AI response is not valid JSON: Unterminated string starting at: line 64 column 22 (char 2075)
