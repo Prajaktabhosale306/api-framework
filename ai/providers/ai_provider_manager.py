@@ -16,7 +16,7 @@ class AIClient:
     def load_provider(self, name):
         if name == "ollama":
             from ai.providers.ollama_provider import ollamaProvider
-            return ollamaProvider(model=os.getenv("AI_MODEL", "llama3.2:1b"))
+            return ollamaProvider(model=os.getenv("AI_MODEL", "gemma3:4b"))
         elif name == "gemini":
             from ai.providers.gemini_provider import GeminiProvider
             return GeminiProvider(model=os.getenv("AI_MODEL", "Gemini-2.0-flash"))
