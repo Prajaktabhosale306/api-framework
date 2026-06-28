@@ -1,6 +1,0 @@
-INFO     ai.providers.ai_provider_manager:ai_provider_manager.py:31 AI Request: You are an API Testing expert. A test just failed. Analyse it.
-    Test Name : test_update_booking
-R...
-DEBUG    ai.providers.ai_provider_manager:ai_provider_manager.py:34 AI Response:Here's the analysis of the failed test:
-
-1.  **ROOT CAUSE**: The API correctly returned a 403 Forbidden status because the request was sent with an expired authentication token, preventing the update ...

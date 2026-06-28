@@ -1,0 +1,15 @@
+INFO     ai.providers.ai_provider_manager:ai_provider_manager.py:31 AI Request: Generate 5 edge case test payloads for:
+    Endpoint: POST /booking
+    Schema: {
+  "type": "object"...
+DEBUG    ai.providers.ai_provider_manager:ai_provider_manager.py:34 AI Response:```json
+[
+  {
+    "payload": {
+      "booking": {
+        "firstname": "Jane",
+        "lastname": "Doe",
+        "totalprice": 111,
+        "depositpaid": true,
+        "bookingdates": {
+          "c...

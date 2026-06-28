@@ -1,8 +1,0 @@
-INFO     ai.providers.ai_provider_manager:ai_provider_manager.py:31 AI Request: Generate 5 edge case test payloads for:
-    Endpoint: POST /booking
-    Schema: {
-  "type": "object"...
-DEBUG    ai.providers.ai_provider_manager:ai_provider_manager.py:34 AI Response:## Generate 5 edge case test payloads for: POST /booking
-
-Here's an array of 5 edge case test payloads, following your specifications for boundary values, missing fields, wrong types, and special char...
-ERROR    ai.providers.ai_provider_manager:ai_provider_manager.py:47 AI response is not valid JSON
