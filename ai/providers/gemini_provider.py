@@ -15,8 +15,8 @@ class GeminiProvider:
         if not api_key:
             raise Exception("GEMINI_API_KEY not found.")
 
-        genai.configure(api_key=api_key)
-        self.model = genai.GenerativeModel(model)
+        self.client = genai.Client(api_key=api_key)
+        self.model = model
 
     def ask(self, prompt, max_tokens=1024):
         try:
@@ -28,5 +28,5 @@ class GeminiProvider:
             return response.text
 
         except Exception:
-            logger.exception("Gemini request failed")
-            raise
+            logger.error("Gemini request failed: {e}")
+            return None
