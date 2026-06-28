@@ -8,7 +8,7 @@ def generate_test_cases(endpoint, method, schema):
 
     prompt = f"""Generate 5 edge case test payloads for:
     Endpoint: {method} {endpoint}
-    Schema: {json.dumps(schema, intent=2)}
+    Schema: {json.dumps(schema, indent=2)}
     
     Include: boundry values, missing fields, wrong types, special characters.
     Return as JSON array: [{{"payload:{{}}, "expected_status:": 400, "description": "..."}}]"""
