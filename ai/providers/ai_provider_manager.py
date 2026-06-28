@@ -16,22 +16,22 @@ class AIClient:
     def load_provider(self, name):
         if name == "ollama":
             from ai.providers.ollama_provider import ollamaProvider
-            return ollamaProvider(model=os.getenv("AI_Model", "llama3"))
-        elif name == "gemimi":
+            return ollamaProvider(model=os.getenv("AI_MODEL", "llama3.2:1b"))
+        elif name == "gemini":
             from ai.providers.gemini_provider import GeminiProvider
             return GeminiProvider(model=os.getenv("AI_MODEL", "Gemini-2.0-flash"))
         elif name == "anthropic":
             from ai.providers.anthropic_provider import AnthropicProvider
             return AnthropicProvider(model=os.getenv("AI_MODEL", "claude-sonnet-4.6"))
         else:
-            raise Exception(f"Unknown AI Provide: {name}")
+            raise Exception(f"Unknown AI Provider: {name}")
         
     def ask(self, prompt, max_tokens=1024):
         """Send promt to whatever provider is configured"""
         logger.info(f"AI Request: {prompt[:100]}...")
         response =self.provider.ask(prompt, max_tokens)
         if response:
-            logger.debug(f"AI Response:{response:200}...")
+            logger.debug(f"AI Response:{response:[200]}...")
         else:
             logger.error("AI Returned no response")
         return response

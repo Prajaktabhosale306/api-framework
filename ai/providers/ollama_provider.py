@@ -7,7 +7,7 @@ class ollamaProvider:
         self.base_url ="http://localhost:11434"
 
     def ask(self, prompt, max_tokens=1024):
-        respose = requests.post(
+        response = requests.post(
             f"{self.base_url}/api/generate",
             json={
                 "model": self.model,
@@ -15,9 +15,10 @@ class ollamaProvider:
                 "stream": False
             }
         )
-        if respose.status_code ==200:
-            return respose.json()["respose"]
-        return None
+        if response.status_code ==200:
+            return response.json()["response"]
+        if response.status_code != 200:
+            raise Exception(f"Ollama returned {response.status_code}: {response.text}")
     
 
 #How to install ollamma
