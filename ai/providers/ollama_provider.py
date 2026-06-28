@@ -4,7 +4,7 @@ class ollamaProvider:
     """runs AI locally on your laptop - completly free"""
     def __init__(self, model=os.getenv("AI_MODEL")):
         self.model =model
-        self.base_url ="https://localhost:11434"
+        self.base_url ="http://localhost:11434"
 
     def ask(self, prompt, max_tokens=1024):
         respose = requests.post(

@@ -9,10 +9,10 @@ def analyse_failure(test_name, request_data, response_data, error_message):
     prompt = f"""You are an API Testing expert. A test just failed. Analyse it.
     Test Name : {test_name}
 Request Sent: 
-{json.dumps(request_data, intent=2)}
+{json.dumps(request_data, indent=2)}
 
 Response Received:
-{json.dumps(response_data, intent=2)}
+{json.dumps(response_data, indent=2)}
 
 Error message:{error_message}
 
