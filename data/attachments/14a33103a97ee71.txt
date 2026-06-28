@@ -1,0 +1,6 @@
+INFO     ai.providers.ai_provider_manager:ai_provider_manager.py:31 AI Request: You are an API Testing expert. A test just failed. Analyse it.
+    Test Name : test_update_booking
+R...
+DEBUG    ai.providers.ai_provider_manager:ai_provider_manager.py:34 AI Response:Analysis:
+
+1. ROOT CAUSE: The test failed because the request was not allowed due to a mismatch between the expected HTTP status code and the actual response from the server, which returned a 403 Forb...

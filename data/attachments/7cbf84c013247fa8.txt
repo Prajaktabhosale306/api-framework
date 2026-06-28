@@ -1,0 +1,7 @@
+INFO     ai.providers.ai_provider_manager:ai_provider_manager.py:31 AI Request: Check if this API Response is logically correct:
+    Request Sent: {"firstname": "Prajakta", "lastna...
+DEBUG    ai.providers.ai_provider_manager:ai_provider_manager.py:34 AI Response:Based on the provided API Response and Request Sent, here are some observations:
+
+1. Does response data match what was sent?
+Yes, it appears that the response data matches the request data. All fields...
+ERROR    ai.providers.ai_provider_manager:ai_provider_manager.py:47 AI response is not valid JSON
