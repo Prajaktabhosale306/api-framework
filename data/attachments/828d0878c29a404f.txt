@@ -1,3 +1,0 @@
-2026-06-28 06:01:53 - ai.providers.ai_provider_manager - INFO - AI Request: You are an API Testing expert. A test just failed. Analyse it.
-    Test Name : test_update_booking
-R...
