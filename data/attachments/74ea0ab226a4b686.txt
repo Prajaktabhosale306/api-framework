@@ -1,0 +1,5 @@
+2026-06-28 06:25:24 - ai.providers.ai_provider_manager - INFO - AI Request: Generate 5 edge case test payloads for:
+    Endpoint: POST /booking
+    Schema: {
+  "type": "object"...
+2026-06-28 06:25:40 - ai.providers.ai_provider_manager - ERROR - AI response is not valid JSON
