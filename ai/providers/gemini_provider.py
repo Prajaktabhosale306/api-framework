@@ -1,25 +1,31 @@
 import os
-import google.generativeai as genai
+from google import genai
+from utils.logger import get_logger
+
+logger = get_logger(__name__)
+
 
 class GeminiProvider:
-    """Google Free AI API - (60 calls per minute free)"""
+    """Google Gemini Provider"""
 
-    def __init__(self, model="gemini-2.0-flash"):
-        api_key =os.getenv("GEMINI_API_KEY")
+    def __init__(self, model="gemini-2.5-flash"):
+        api_key = os.getenv("GEMINI_API_KEY")
+
         if not api_key:
-            raise Exception("GEMINI_API_KEY not found in .env")
-        genai.configure(api_key=api_key)
-        self.model =genai.GenerativeModel(model)
+            raise ValueError("GEMINI_API_KEY not found.")
 
-    def ask(self, prompt, max_token=1024):
+        self.client = genai.Client(api_key=api_key)
+        self.model = model
+
+    def ask(self, prompt, max_tokens=1024):
         try:
-            response = self.model.generate_content(prompt)
+            response = self.client.models.generate_content(
+                model=self.model,
+                contents=prompt,
+            )
+
             return response.text
-        except Exception as e:
-            return None
-    
-##
-# 1. Goto https://aistudio.google.com/apikey
-# 2. Sign in with google account
-# 3. click "Create API Key"
-# Copy key -> Add it to .env/ Github secret#
+
+        except Exception:
+            logger.exception("Gemini request failed")
+            raise

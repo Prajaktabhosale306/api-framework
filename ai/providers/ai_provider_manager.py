@@ -1,7 +1,10 @@
 import os
 import json
+from dotenv import load_dotenv
+import google.genai as genai
 from utils.logger import get_logger
 
+load_dotenv()
 logger = get_logger(__name__)
 
 class AIClient:

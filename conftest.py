@@ -1,16 +1,18 @@
 import pytest
 import json
 import os
+from pytest import StashKey #Pytest 8 introduced a proper storage mechanism.
 from api.auth_api import AuthAPI
 from api.booking_api import BookingAPI
 from utils.helpers import get_booking_payload
 from dotenv import load_dotenv
 
-
 load_dotenv()
+
 def pytest_addoption(parser):
     parser.addoption("--env", action="store", default="qa", help="Environment to run tests against (qa, stage, prod)")
 
+pytest_plugins = ["plugins.ai_plugin"]
 @pytest.fixture(scope="session")
 def config(request):
     env = request.config.getoption("--env")
@@ -72,3 +74,9 @@ def booking_payload():
 def booking_schema():
     with open("testdata/schemas/booking_schema.json") as file:
         return json.load(file)
+    
+CURRENT_TEST = StashKey()
+
+@pytest.hookimpl(tryfirst=True)
+def pytest_runtest_setup(item):
+    item.stash[CURRENT_TEST] = item

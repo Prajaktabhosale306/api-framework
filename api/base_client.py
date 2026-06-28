@@ -1,6 +1,7 @@
 from time import time
 import requests
 import json
+import pytest
 from utils.logger import get_logger
 from utils.allure_helper import attach_request, attach_response
 logger = get_logger(__name__)
@@ -14,6 +15,24 @@ class BaseClient:
         self._retry_count = retries #number of time we can rerequesting
         self.delay = delay #wait between retry, don't flood the server with immidiate retries
 
+    def _store_for_ai(self, method, url, payload, headers, response):
+        """Store last request/response so AI Plugin can access on failures"""
+        try:
+            current_test = pytest.current_test_item
+            if current_test:
+                current_test.last_request ={
+                    "method": method,
+                    "url": url,
+                    "headers": headers,
+                    "body": payload
+                }
+                current_test._last_response = {
+                    "status_code" : response.status_code,
+                    "body": response.text[:500]
+                }
+        except Exception:
+            pass
+
     def get(self, endpoint, params=None, headers=None): 
         url = f"{self.base_url}{endpoint}" # Build full URL
         logger.info(f"GET Request URL: {url}, Params: {params}, Headers: {headers}") # log what we're doing
@@ -22,6 +41,7 @@ class BaseClient:
         attach_request("GET", url, headers, params)  #attach to allure report
         attach_response(response) # attach response to allure 
         self._log_response(response) #log + Body
+        self._store_for_ai("GET", url, None, headers, response) #Store for failure plugin
         return response 
 
     def post(self, endpoint, data=None, json_data=None, headers=None):
@@ -34,6 +54,8 @@ class BaseClient:
         attach_response(response)
 
         self._log_response(response)
+        self._store_for_ai("POST", url, None, headers, response) #Store for failure plugin
+
         return response
 
     def put(self, endpoint, data=None, json_data=None, headers=None):
@@ -44,6 +66,7 @@ class BaseClient:
         attach_request("PUT", url, headers, json_data)
         attach_response(response)
         self._log_response(response)
+        self._store_for_ai("PUT", url, None, headers, response) #Store for failure plugin
         return response
 
     def delete(self, endpoint, headers=None):
@@ -54,6 +77,7 @@ class BaseClient:
         attach_request("DELETE", url, headers)
         attach_response(response)
         self._log_response(response)
+        self._store_for_ai("GET", url, None, headers, response) #Store for failure plugin
         return response
 
     #Underscore _ = Private method, only use internaly
