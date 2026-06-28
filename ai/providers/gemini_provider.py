@@ -9,7 +9,7 @@ class GeminiProvider:
     """Google Gemini Provider"""
 
     def __init__(self, model="gemini-2.5-flash"):
-        import google.generativeai as genai
+        import google.genai as genai
         api_key = os.getenv("GEMINI_API_KEY")
 
         if not api_key:
