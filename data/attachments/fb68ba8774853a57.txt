@@ -1,0 +1,3 @@
+INFO     ai.providers.ai_provider_manager:ai_provider_manager.py:31 AI Request: You are an API Testing expert. A test just failed. Analyse it.
+    Test Name : test_update_booking
+R...
