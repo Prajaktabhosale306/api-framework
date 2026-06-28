@@ -1,4 +1,0 @@
-2026-06-27 15:55:17 - api.base_client - INFO - POST Request URL: http://restful-booker.herokuapp.com/booking, Data: None, JSON Data: {'firstname': 'Prajakta', 'lastname': 'Bhosale', 'totalprice': 100, 'depositpaid': True, 'bookingdates': {'checkin': '2023-01-01', 'checkout': '2023-01-02'}, 'additionalneeds': None}, Headers: None
-2026-06-27 15:55:17 - api.base_client - INFO - Response Status Code: 200
-2026-06-27 15:55:17 - ai.providers.ai_provider_manager - INFO - AI Request: Check if this API Response is logically correct:
-    Request Sent: {"firstname": "Prajakta", "lastna...
