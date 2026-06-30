@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from ai.failure_analyzer import analyse_failure
+from ai.failure_analyzer import analyze_failure
 from ai.test_generator import generate_test_cases
 from ai.response_validator import validate_response
 from ai.data_generator import generate_test_data
@@ -13,7 +13,7 @@ from ai.data_generator import generate_test_data
 class TestAIFeatures:
 
     def test_failure_analysis(self):
-        result = analyse_failure(
+        result = analyze_failure(
             test_name="test_update_booking",
             request_data={"method": "PUT", "url": "/booking/5", "headers": {"Cookie":"token=expired"}},
             response_data={"status_code": 403,"body": "forbidden"},

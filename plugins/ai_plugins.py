@@ -1,7 +1,7 @@
 import pytest
 import allure
 import json
-from ai.failure_analyzer import analyse_failure
+from ai.failure_analyzer import analyze_failure
 from utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -24,7 +24,7 @@ def pytest_runtest_makereport(item, call):
     #Ask AI to analyze the failure
     try:
         logger.info(f"AI Analysing Failure{item.name}")
-        analysis = analyse_failure(
+        analysis = analyze_failure(
             test_name=item.name,
             request_data=request_data,
             response_data=response_data,

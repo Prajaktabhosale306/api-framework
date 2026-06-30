@@ -6,7 +6,7 @@ ai=AIClient()
 def analyze_failure(test_name, request_data, response_data, error_message):
     """When a test fails, AI explains why"""
 
-    prompt = f"""You are an API Testing expert. A test just failed. Analyse it.
+    prompt = f"""You are an API Testing expert. A test just failed. Analyze it.
 Test Name : {test_name}
 Request Sent: 
 {json.dumps(request_data, indent=2)}

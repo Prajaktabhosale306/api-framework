@@ -23,15 +23,19 @@ def pytest_runtest_makereport(item, call):
         return
 
     # Get last request/response if stored
-    booking_api = item.funcargs.get("booking_api", None)
-    if booking_api:
-        request_data = getattr(booking_api, "_last_request_data", {})
-        response_data = getattr(booking_api, "_last_response_data", {})
-    else:
-        request_data={}
-        response_data={}
+   # booking_api = item.funcargs.get("booking_api", None)
+   # if booking_api:
+    #    request_data = getattr(booking_api, "_last_request_data", {})
+   #     response_data = getattr(booking_api, "_last_response_data", {})
+    #else:
+    request_data={}
+    response_data={}
+    for fixture_name, fixture_value in item.funcargs.items():
+        if hasattr(fixture_value,"_last_request_data"):
+            request_data = getattr(fixture_value, "_last_request_data", {})
+            response_data = getattr(fixture_value, "_last_response_data", {})
+            break
     error_message = str(call.excinfo.value)
-
     try:
         # Agentic: Try autonomous healing first
         result = orchestrator.handle_failure(
