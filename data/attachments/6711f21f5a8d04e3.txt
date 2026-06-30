@@ -1,3 +1,0 @@
-1.  **ROOT CAUSE**: The API returned an HTTP 404 (Not Found) status code, indicating the requested resource or endpoint was not found, while the test explicitly expected an HTTP 200 (OK) status code.
-2.  **CATEGORY**: Bug in API / Test Issue (The 404 could mean the API endpoint is missing, misconfigured, or the test is sending the request to an incorrect URL.)
-3.  **SUGGESTED FIX**: Verify the API endpoint's existence and correct path in the test; if the endpoint should exist and return 200, investigate the API's implementation or server configuration.
