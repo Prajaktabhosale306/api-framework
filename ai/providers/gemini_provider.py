@@ -26,7 +26,9 @@ class GeminiProvider:
             )
 
             return response.text
-
-        except Exception:
-            logger.error("Gemini request failed: {e}")
+        except Exception as e:
+            if "RESOURCE_EXHAUSTED" in str(e):
+                logger.warning("Gemini quota exceeded. Skipping AI healing.")
+                return None
+            logger.exception("Gemini request failed")
             return None

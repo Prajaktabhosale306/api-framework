@@ -1,7 +1,6 @@
 from time import time
 import requests
 import json
-import pytest
 from utils.logger import get_logger
 from utils.allure_helper import attach_request, attach_response
 logger = get_logger(__name__)
@@ -16,22 +15,19 @@ class BaseClient:
         self.delay = delay #wait between retry, don't flood the server with immidiate retries
 
     def _store_for_ai(self, method, url, payload, headers, response):
-        """Store last request/response so AI Plugin can access on failures"""
         try:
-            current_test = pytest.current_test_item
-            if current_test:
-                current_test.last_request ={
+            self._last_request_data ={
                     "method": method,
                     "url": url,
                     "headers": headers,
                     "body": payload
                 }
-                current_test._last_response = {
+            self._last_response = {
                     "status_code" : response.status_code,
                     "body": response.text[:500]
                 }
         except Exception:
-            pass
+           pass
 
     def get(self, endpoint, params=None, headers=None): 
         url = f"{self.base_url}{endpoint}" # Build full URL
@@ -54,16 +50,20 @@ class BaseClient:
         attach_response(response)
 
         self._log_response(response)
-        self._store_for_ai("POST", url, None, headers, response) #Store for failure plugin
+        self._store_for_ai("POST", url, json_data, headers, response) #Store for failure plugin
 
         return response
 
     def put(self, endpoint, data=None, json_data=None, headers=None):
         url = f"{self.base_url}{endpoint}"
         logger.info(f"PUT Request URL: {url}, Data: {data}, JSON Data: {json_data}, Headers: {headers}")
-        response = self.session.put(url, data=data, json=json_data, headers=headers, timeout=self.timeout)
-        #attach to allure report
-        attach_request("PUT", url, headers, json_data)
+        response = self._request(
+            method="POST",
+            endpoint=endpoint,
+            payload=json_data,
+            headers=headers
+            )
+        #attach to allure reportattach_request("PUT", url, headers, json_data)
         attach_response(response)
         self._log_response(response)
         self._store_for_ai("PUT", url, None, headers, response) #Store for failure plugin
@@ -77,7 +77,7 @@ class BaseClient:
         attach_request("DELETE", url, headers)
         attach_response(response)
         self._log_response(response)
-        self._store_for_ai("GET", url, None, headers, response) #Store for failure plugin
+        self._store_for_ai("DELETE", url, None, headers, response)        
         return response
 
     #Underscore _ = Private method, only use internaly

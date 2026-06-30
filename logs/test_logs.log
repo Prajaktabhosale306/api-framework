@@ -1,5 +1,13 @@
-2026-06-28 21:01:00 - plugins.ai_plugin - INFO - AI Analysing Failuretest_intention2026-06-2026-06-28 21:01:17 - plugins.ai_plugin - INFO - AI analysis 
-1.  **ROOT CAUSE**: The API returned a 404 Not Found status code, but the test expected a 200 OK status code.
-2.  **CATEGORY**: Test Issue
-3.  **SUGGESTED FIX**: Given the test name `test_intentional_fail`, review the test's assertion to ensure it correctly reflects the expected (failing) status code for the scenario it's testing, or verify the endpoint being called.
-test_intentional_...
+2026-06-30 08:02:50 - ai.providers.gemini_provider - WARNING - Gemini quota exceeded. Skipping AI healing.
+2026-06-30 08:02:50 - ai.providers.gemini_provider - WARNING - Gemini quota exceeded. Skipping AI healing.
+Decision: fix_headers - The test expects a 400 Bad Request status code because the request body contains multiple invalid values (empty strings for firstname/lastname, negative totalprice, non-boolean depositpaid, and invalid dates). However, the API returned a 200 OK with an empty response body. This suggests the API might not have correctly parsed the JSON request body. The request explicitly sets `"headers": null`. For a POST request with a JSON body, the `Content-Type: application/json` header is crucial. Without it, the API might not interpret the body as JSON, leading it to ignore the provided data or process it in an unexpected way (e.g., creating a booking with default values if possible, or simply returning 200 without actuall2026-06-30 08:02:50 - ai.providers.ai_provider_manager - INFO - AI Request: 
+    You are an API Testing expert. A test failed.
+
+    Request:
+    {
+  "method": "POST",
+  "url": ...
+2026-06-30 08:02:50 - ai.providers.ai_provider_manager - ERROR - AI Returned no response
+2026-06-30 08:02:50 - ai.providers.ai_provider_manager - INFO - AI Request: You are an API Testing expert. A test just failed. Analyse it.
+Test Name : test_healing_agent_trigge...
+2026-06-30 08:02:50 - ai.providers.ai_provider_manager - ERROR - AI Returned no response

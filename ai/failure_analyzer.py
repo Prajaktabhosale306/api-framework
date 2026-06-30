@@ -3,7 +3,7 @@ from ai.providers.ai_provider_manager import AIClient
 
 ai=AIClient()
 
-def analyse_failure(test_name, request_data, response_data, error_message):
+def analyze_failure(test_name, request_data, response_data, error_message):
     """When a test fails, AI explains why"""
 
     prompt = f"""You are an API Testing expert. A test just failed. Analyse it.

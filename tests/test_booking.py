@@ -44,7 +44,7 @@ class TestBooking:
         response = booking_api.delete_booking(TestBooking.booking_id, auth_token)
         assert response.status_code == 201  # Assuming 201 is the expected status code for successful deletion
 
-    def test_intentional_fail(self, booking_api):
+    #def test_intentional_fail(self, booking_api):
         """Temporary test - will fail so we can see AI analysis"""
-        response = booking_api.get_booking(99999999)
-        assert response.status_code == 200 #will fail with 404
+        #response = booking_api.get_booking(99999999)
+        #assert response.status_code == 200 #will fail with 404
