@@ -1,1 +1,1 @@
-{"total":0,"items":[]}
+{"total":9,"items":[{"uid":"b58cadd59a03f74ae4fb3f7e1e017a9c","name":"Agentic AI","statistic":{"failed":1,"broken":0,"skipped":0,"passed":0,"unknown":0,"total":1}},{"uid":"65d620878ecc3ed1412b6c150f2a51a5","name":"Booking API Tests","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}}]}

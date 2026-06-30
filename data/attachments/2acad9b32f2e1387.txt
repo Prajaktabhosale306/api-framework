@@ -1,0 +1,22 @@
+2026-06-30 03:00:30 - ai.providers.ai_provider_manager - INFO - AI Request: You are an API Testing expert. A test just failed. Analyze it.
+Test Name : test_update_booking
+Reque...
+2026-06-30 03:00:30 - ai.providers.gemini_provider - WARNING - Gemini quota exceeded. Skipping AI healing.
+2026-06-30 03:00:30 - ai.providers.ai_provider_manager - ERROR - AI Returned no response
+2026-06-30 03:00:30 - ai.providers.ai_provider_manager - INFO - AI Request: 
+You are a test-healing agent.
+
+Failure Type:
+assertion_failure
+
+Error:
+assert None is not None
+
+Req...
+2026-06-30 03:00:30 - ai.providers.gemini_provider - WARNING - Gemini quota exceeded. Skipping AI healing.
+2026-06-30 03:00:30 - ai.providers.ai_provider_manager - ERROR - AI Returned no response
+2026-06-30 03:00:30 - ai.providers.ai_provider_manager - INFO - AI Request: You are an API Testing expert. A test just failed. Analyze it.
+Test Name : test_failure_analysis
+Req...
+2026-06-30 03:00:30 - ai.providers.gemini_provider - WARNING - Gemini quota exceeded. Skipping AI healing.
+2026-06-30 03:00:30 - ai.providers.ai_provider_manager - ERROR - AI Returned no response

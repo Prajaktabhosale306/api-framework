@@ -1,0 +1,4 @@
+INFO     ai.providers.ai_provider_manager:ai_provider_manager.py:34 AI Request: Check if this API Response is logically correct:
+    Request Sent: {"firstname": "Prajakta", "lastna...
+WARNING  ai.providers.gemini_provider:gemini_provider.py:31 Gemini quota exceeded. Skipping AI healing.
+ERROR    ai.providers.ai_provider_manager:ai_provider_manager.py:39 AI Returned no response

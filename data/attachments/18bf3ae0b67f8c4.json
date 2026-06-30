@@ -1,0 +1,15 @@
+{
+    "method": "POST",
+    "url": "http://restful-booker.herokuapp.com/booking",
+    "headers": null,
+    "payload": {
+        "firstname": "",
+        "lastname": "",
+        "totalprice": -100,
+        "depositpaid": "not_boolean",
+        "bookingdates": {
+            "checkin": "invalid-date",
+            "checkout": "invalid-date"
+        }
+    }
+}
