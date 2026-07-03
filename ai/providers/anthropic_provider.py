@@ -14,8 +14,8 @@ class AnthropicProvider:
     def ask(self, prompt, max_token=1024):
         try:
             message =self.client.message.create(
-               model = self.model
-               max_token=max_token
+               model = self.model,
+               max_token=max_token,
                message=[{"role": "user", "content": prompt}]
             )
             return message.content[0].text

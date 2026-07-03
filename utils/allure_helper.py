@@ -1,7 +1,7 @@
 import allure
 import json
 
-def attach_request(method, url, headers=None, payload=None):
+def attach_request(method, url, headers=None, payload=None)-> None:
     allure.attach(json.dumps({
         "method": method,
         "url": url,
@@ -10,7 +10,7 @@ def attach_request(method, url, headers=None, payload=None):
     }, indent=4), name="Request", attachment_type=allure.attachment_type.JSON)
 
 
-def attach_response(response):
+def attach_response(response)-> None:
     content_type = response.headers.get("Content-Type", "")
 
     if "application/json" in content_type:
