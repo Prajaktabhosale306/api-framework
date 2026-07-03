@@ -1,0 +1,30 @@
+INFO     ai.providers.ai_provider_manager:ai_provider_manager.py:34 AI Request: Generate 5 edge case test payloads for:
+    Endpoint: POST /booking
+    Schema: {
+  "type": "object"...
+DEBUG    ai.providers.ai_provider_manager:ai_provider_manager.py:37 AI Response:```json
+[
+  {
+    "payload": {
+      "booking": {
+        "lastname": "Smith",
+        "totalprice": 111,
+        "depositpaid": true,
+        "bookingdates": {
+          "checkout": "2023-01-01"
+    ...
+INFO     api.base_client:base_client.py:45 POST Request URL: http://restful-booker.herokuapp.com/booking, Data: None, JSON Data: {'booking': {'lastname': 'Smith', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkout': '2023-01-01'}, 'additionalneeds': 'Breakfast'}}, Headers: None
+INFO     api.base_client:base_client.py:85 Response Status Code: 500
+DEBUG    api.base_client:base_client.py:86 Response Body: Internal Server Error
+INFO     api.base_client:base_client.py:45 POST Request URL: http://restful-booker.herokuapp.com/booking, Data: None, JSON Data: {'booking_id': 'one', 'booking': {'firstname': 'John', 'lastname': 'Doe', 'totalprice': 'one hundred fifty', 'depositpaid': 'false', 'bookingdates': {'checkin': 1672531200, 'checkout': '2023-01-07'}, 'additionalneeds': 'Late checkout'}}, Headers: None
+INFO     api.base_client:base_client.py:85 Response Status Code: 500
+DEBUG    api.base_client:base_client.py:86 Response Body: Internal Server Error
+INFO     api.base_client:base_client.py:45 POST Request URL: http://restful-booker.herokuapp.com/booking, Data: None, JSON Data: {'booking_id': 12345, 'booking': {'firstname': 'Alice', 'lastname': 'Wonderland', 'totalprice': -50, 'depositpaid': True, 'bookingdates': {'checkin': '2023-01-10', 'checkout': '2023-01-05'}, 'additionalneeds': None}}, Headers: None
+INFO     api.base_client:base_client.py:85 Response Status Code: 500
+DEBUG    api.base_client:base_client.py:86 Response Body: Internal Server Error
+INFO     api.base_client:base_client.py:45 POST Request URL: http://restful-booker.herokuapp.com/booking, Data: None, JSON Data: {'booking_id': 98765, 'booking': {'firstname': '', 'lastname': '!@#$%^&*', 'totalprice': 0, 'depositpaid': False, 'bookingdates': {'checkin': '2024-02-14', 'checkout': '2024-02-16'}, 'additionalneeds': "<script>alert('XSS')</script>"}}, Headers: None
+INFO     api.base_client:base_client.py:85 Response Status Code: 500
+DEBUG    api.base_client:base_client.py:86 Response Body: Internal Server Error
+INFO     api.base_client:base_client.py:45 POST Request URL: http://restful-booker.herokuapp.com/booking, Data: None, JSON Data: {'booking_id': 100, 'booking': {'firstname': 'Test', 'lastname': 'User', 'totalprice': None, 'depositpaid': 1, 'bookingdates': [], 'additional_info': 'Some extra field'}, 'unexpected_root_field': 'should not be here'}, Headers: None
+INFO     api.base_client:base_client.py:85 Response Status Code: 500
+DEBUG    api.base_client:base_client.py:86 Response Body: Internal Server Error

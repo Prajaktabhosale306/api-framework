@@ -1,0 +1,4 @@
+2026-07-03 05:42:57 - ai.providers.ai_provider_manager - INFO - AI Request: Generate 5 edge case test payloads for:
+    Endpoint: POST /booking
+    Schema: {
+  "type": "object"...

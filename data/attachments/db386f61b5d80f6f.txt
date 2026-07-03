@@ -1,0 +1,17 @@
+2026-07-03 05:42:10 - api.base_client - INFO - POST Request URL: http://restful-booker.herokuapp.com/booking, Data: None, JSON Data: {'firstname': '', 'lastname': '', 'totalprice': -100, 'depositpaid': 'not_boolean', 'bookingdates': {'checkin': 'invalid-date', 'checkout': 'invalid-date'}}, Headers: None
+2026-07-03 05:42:10 - api.base_client - INFO - Response Status Code: 200
+2026-07-03 05:42:10 - ai.providers.ai_provider_manager - INFO - AI Request: 
+You are a test-healing agent.
+
+Failure Type:
+assertion_failure
+
+Error:
+Expected 400 but got got 200...
+2026-07-03 05:42:24 - ai.providers.ai_provider_manager - INFO - AI Request: 
+    You are an API Testing expert. A test failed.
+
+    Request:
+    {
+  "method": "POST",
+  "url": ...

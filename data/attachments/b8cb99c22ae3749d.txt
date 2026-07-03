@@ -1,6 +1,0 @@
-INFO     ai.providers.ai_provider_manager:ai_provider_manager.py:34 AI Request: Generate 5 edge case test payloads for:
-    Endpoint: POST /booking
-    Schema: {
-  "type": "object"...
-WARNING  ai.providers.gemini_provider:gemini_provider.py:31 Gemini quota exceeded. Skipping AI healing.
-ERROR    ai.providers.ai_provider_manager:ai_provider_manager.py:39 AI Returned no response

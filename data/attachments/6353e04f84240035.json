@@ -1,0 +1,17 @@
+{
+    "method": "POST",
+    "url": "http://restful-booker.herokuapp.com/booking",
+    "headers": null,
+    "payload": {
+        "booking_id": 100,
+        "booking": {
+            "firstname": "Test",
+            "lastname": "User",
+            "totalprice": null,
+            "depositpaid": 1,
+            "bookingdates": [],
+            "additional_info": "Some extra field"
+        },
+        "unexpected_root_field": "should not be here"
+    }
+}

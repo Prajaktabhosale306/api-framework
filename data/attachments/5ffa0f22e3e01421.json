@@ -1,0 +1,19 @@
+{
+    "method": "POST",
+    "url": "http://restful-booker.herokuapp.com/booking",
+    "headers": null,
+    "payload": {
+        "booking_id": 12345,
+        "booking": {
+            "firstname": "Alice",
+            "lastname": "Wonderland",
+            "totalprice": -50,
+            "depositpaid": true,
+            "bookingdates": {
+                "checkin": "2023-01-10",
+                "checkout": "2023-01-05"
+            },
+            "additionalneeds": null
+        }
+    }
+}

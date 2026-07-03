@@ -1,0 +1,10 @@
+
+ Missing top-level 'booking_id', required 'firstname' in booking, and required 'checkin' in bookingdates.: got 500
+
+ Wrong data types: 'booking_id' as string, 'totalprice' as string, 'depositpaid' as string, 'checkin' as integer.: got 500
+
+ Invalid date logic: 'checkin' date is after 'checkout' date. Also includes negative 'totalprice' (boundary value).: got 500
+
+ Boundary values: empty string for 'firstname', special characters for 'lastname', XSS payload for 'additionalneeds', and zero for 'totalprice'.: got 500
+
+ Wrong data types: 'totalprice' as null (should be integer), 'depositpaid' as integer (should be boolean), 'bookingdates' as array (should be object). Includes unexpected fields.: got 500

@@ -1,0 +1,14 @@
+2026-07-03 05:43:25 - ai.providers.ai_provider_manager - INFO - AI Request: Generate 5 edge case test payloads for:
+    Endpoint: POST /booking
+    Schema: {
+  "type": "object"...
+2026-07-03 05:43:38 - api.base_client - INFO - POST Request URL: http://restful-booker.herokuapp.com/booking, Data: None, JSON Data: {'booking': {'lastname': 'Smith', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkout': '2023-01-01'}, 'additionalneeds': 'Breakfast'}}, Headers: None
+2026-07-03 05:43:38 - api.base_client - INFO - Response Status Code: 500
+2026-07-03 05:43:38 - api.base_client - INFO - POST Request URL: http://restful-booker.herokuapp.com/booking, Data: None, JSON Data: {'booking_id': 'one', 'booking': {'firstname': 'John', 'lastname': 'Doe', 'totalprice': 'one hundred fifty', 'depositpaid': 'false', 'bookingdates': {'checkin': 1672531200, 'checkout': '2023-01-07'}, 'additionalneeds': 'Late checkout'}}, Headers: None
+2026-07-03 05:43:38 - api.base_client - INFO - Response Status Code: 500
+2026-07-03 05:43:38 - api.base_client - INFO - POST Request URL: http://restful-booker.herokuapp.com/booking, Data: None, JSON Data: {'booking_id': 12345, 'booking': {'firstname': 'Alice', 'lastname': 'Wonderland', 'totalprice': -50, 'depositpaid': True, 'bookingdates': {'checkin': '2023-01-10', 'checkout': '2023-01-05'}, 'additionalneeds': None}}, Headers: None
+2026-07-03 05:43:38 - api.base_client - INFO - Response Status Code: 500
+2026-07-03 05:43:38 - api.base_client - INFO - POST Request URL: http://restful-booker.herokuapp.com/booking, Data: None, JSON Data: {'booking_id': 98765, 'booking': {'firstname': '', 'lastname': '!@#$%^&*', 'totalprice': 0, 'depositpaid': False, 'bookingdates': {'checkin': '2024-02-14', 'checkout': '2024-02-16'}, 'additionalneeds': "<script>alert('XSS')</script>"}}, Headers: None
+2026-07-03 05:43:38 - api.base_client - INFO - Response Status Code: 500
+2026-07-03 05:43:38 - api.base_client - INFO - POST Request URL: http://restful-booker.herokuapp.com/booking, Data: None, JSON Data: {'booking_id': 100, 'booking': {'firstname': 'Test', 'lastname': 'User', 'totalprice': None, 'depositpaid': 1, 'bookingdates': [], 'additional_info': 'Some extra field'}, 'unexpected_root_field': 'should not be here'}, Headers: None
+2026-07-03 05:43:38 - api.base_client - INFO - Response Status Code: 500
